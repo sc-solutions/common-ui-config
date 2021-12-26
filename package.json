@@ -1,0 +1,28 @@
+{
+  "name": "common-ui-config",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sc-solutions/common-ui-config.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sc-solutions/common-ui-config/issues"
+  },
+  "homepage": "https://github.com/sc-solutions/common-ui-config#readme",
+  "devDependencies": {
+    "@types/lodash": "^4.14.178",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
