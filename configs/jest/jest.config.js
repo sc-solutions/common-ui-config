@@ -13,7 +13,6 @@ module.exports = {
   ],
   coverageDirectory: "coverage",
   coveragePathIgnorePatterns: ["/node_modules/", ".stories.[tj]s?(x)$"],
-  // Cobertura is the reporter needed for Coverlay: https://sage.amazon.com/questions/544523
   coverageReporters: ["cobertura", "text", "text-summary", "lcov"],
   coverageThreshold: {
     global: {

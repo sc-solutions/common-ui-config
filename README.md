@@ -386,8 +386,6 @@ This browser list is used by any tool that needs to consider browser support for
 Create a file named `.browserslistrc` and include the following content.
 
 ```txt
-# Browser support for Aamazon Frieght.
-
 last 1 Chrome major versions
 last 1 Firefox major versions
 last 1 Edge major versions
