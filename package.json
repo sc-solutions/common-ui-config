@@ -17,7 +17,8 @@
     "format:check": "prettier --check .",
     "spellcheck": "cspell 'configs/**' '*.md'",
     "readme-toc": "remark README.md --output --use 'remark-toc=tight:true,maxDepth:3' && prettier --write README.md",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "echo 'no tests'"
   },
   "repository": {
     "type": "git",
