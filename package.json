@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/sc-solutions/common-ui-config#readme",
   "publishConfig": {
-    "sc-solutions:registry": "https://npm.pkg.github.com"
+    "@sc-solutions:registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.178",

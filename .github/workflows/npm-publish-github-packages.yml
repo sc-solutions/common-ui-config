@@ -30,11 +30,13 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
-      - run: |
-          echo "//npm.pkg.github.com/:_authToken=$NODE_AUTH_TOKEN" > ~/.npmrc
-          npm ci
+      - run: echo "//npm.pkg.github.com/:_authToken=$NODE_AUTH_TOKEN" > .npmrc
         env:
-          NODE_AUTH_TOKEN: ${{ github.token}}
+          NODE_AUTH_TOKEN: ${{ github.token }}
+      - run: ls -a
+      - run: npm install
+      - run: npm run build
+      - run: npm ci
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ github.token}}
