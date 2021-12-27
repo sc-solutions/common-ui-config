@@ -1,0 +1,10 @@
+/build
+/node_modules
+/dist
+/coverage
+package-lock.json
+/.husky
+/.prettierignore
+/.eslintignore
+/README.node_modules
+/.npm

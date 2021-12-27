@@ -1,0 +1,6 @@
+{
+  "name": "@amzn/af-browserslist-config",
+  "description": "Custom Browserslist config for Amazon Freight",
+  "version": "1.0.0",
+  "main": "index.js"
+}

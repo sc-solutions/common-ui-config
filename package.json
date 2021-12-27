@@ -1,11 +1,23 @@
 {
-  "name": "common-ui-config",
-  "version": "1.0.0",
+  "name": "@sc-solutions/common-ui-config",
+  "version": "1.0.2-beta",
   "description": "",
-  "main": "dist/index.js",
+  "files": [
+    "/configs"
+  ],
   "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\""
+    "release": "npm run build",
+    "build": "npm run format:check && npm run lint",
+    "list-outdated-dependencies": "npm-check-updates --dep dev,prod --format repo && npm-check-updates --dep peer --format repo --minimal",
+    "update-dependencies": "npm-check-updates --dep dev,prod -u && npm-check-updates --dep peer --minimal -u && brazil-build install && npm run release",
+    "clean": "rm -rf node_modules build/*",
+    "lint": "eslint . --max-warnings 0",
+    "lint-fix": "npm run lint -- --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "spellcheck": "cspell 'configs/**' '*.md'",
+    "readme-toc": "remark README.md --output --use 'remark-toc=tight:true,maxDepth:3' && prettier --write README.md",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -18,14 +30,273 @@
     "url": "https://github.com/sc-solutions/common-ui-config/issues"
   },
   "homepage": "https://github.com/sc-solutions/common-ui-config#readme",
-  "publishConfig": {
-    "@sc-solutions:registry": "https://npm.pkg.github.com"
+  "peerDependencies": {
+    "@babel/core": "7.x",
+    "@babel/eslint-parser": "7.x",
+    "@babel/preset-env": "7.x",
+    "@babel/preset-react": "7.x",
+    "@babel/preset-typescript": "7.x",
+    "babel-plugin-emotion": "10.x",
+    "@rollup/plugin-babel": "5.x",
+    "@rollup/plugin-commonjs": "20.x",
+    "@rollup/plugin-json": "4.x",
+    "@rollup/plugin-node-resolve": "13.x",
+    "@rollup/plugin-typescript": "8.x",
+    "@storybook/addon-a11y": "6.x",
+    "@storybook/addon-essentials": "6.x",
+    "@storybook/addon-links": "6.x",
+    "@storybook/builder-webpack5": "6.x",
+    "@storybook/manager-webpack5": "6.x",
+    "@storybook/react": "6.x",
+    "@types/jest": "26.x - 27.x",
+    "@typescript-eslint/eslint-plugin": "4.31 - 4.x",
+    "@typescript-eslint/parser": "4.31 - 4.x",
+    "babel-loader": "8.x",
+    "cookie-parser": "1.x",
+    "core-js": "3.x",
+    "css-loader": "5.x - 6.x",
+    "css-minimizer-webpack-plugin": "2.x - 3.x",
+    "dotenv": "8.x - 10.x",
+    "dotenv-webpack": "7.x",
+    "eslint": "7.x",
+    "eslint-plugin-chai-friendly": "0.x",
+    "eslint-plugin-cypress": "2.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jest": "24.x",
+    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-react": "7.25 - 7.x",
+    "eslint-plugin-react-hooks": "4.x",
+    "eslint-plugin-testing-library": "4.8 - 4.x",
+    "fork-ts-checker-webpack-plugin": "6.x",
+    "html-webpack-plugin": "5.x",
+    "identity-obj-proxy": "3.x",
+    "jest": "26.x - 27.x",
+    "mini-css-extract-plugin": "1.x - 2.x",
+    "mini-svg-data-uri": "1.x",
+    "node-polyfill-webpack-plugin": "1.x",
+    "npm-check-updates": "11.x",
+    "postcss": "8.x",
+    "postcss-loader": "5.x - 6.x",
+    "postcss-preset-env": "6.x",
+    "prettier": "2.x",
+    "rollup": "2.x",
+    "rollup-plugin-delete": "2.x",
+    "rollup-plugin-filesize": "9.x",
+    "sass": "1.x",
+    "sass-loader": "11.x - 12.x",
+    "terser-webpack-plugin": "5.x",
+    "ttypescript": "1.x",
+    "typescript": "4.2.x - 4.4.x",
+    "typescript-transform-paths": "3.x",
+    "webpack": "5.x",
+    "webpack-bundle-analyzer": "4.x",
+    "webpack-cli": "4.x",
+    "webpack-dev-server": "4.x",
+    "webpack-merge": "5.x"
+  },
+  "peerDependenciesMeta": {
+    "@babel/core": {
+      "optional": true
+    },
+    "@babel/eslint-parser": {
+      "optional": true
+    },
+    "@babel/preset-env": {
+      "optional": true
+    },
+    "@babel/preset-react": {
+      "optional": true
+    },
+    "@babel/preset-typescript": {
+      "optional": true
+    },
+    "@rollup/plugin-babel": {
+      "optional": true
+    },
+    "@rollup/plugin-commonjs": {
+      "optional": true
+    },
+    "@rollup/plugin-json": {
+      "optional": true
+    },
+    "@rollup/plugin-node-resolve": {
+      "optional": true
+    },
+    "@rollup/plugin-typescript": {
+      "optional": true
+    },
+    "@storybook/addon-a11y": {
+      "optional": true
+    },
+    "@storybook/addon-essentials": {
+      "optional": true
+    },
+    "@storybook/addon-links": {
+      "optional": true
+    },
+    "@storybook/builder-webpack5": {
+      "optional": true
+    },
+    "@storybook/manager-webpack5": {
+      "optional": true
+    },
+    "@storybook/react": {
+      "optional": true
+    },
+    "@types/jest": {
+      "optional": true
+    },
+    "@typescript-eslint/eslint-plugin": {
+      "optional": true
+    },
+    "@typescript-eslint/parser": {
+      "optional": true
+    },
+    "babel-loader": {
+      "optional": true
+    },
+    "babel-plugin-emotion": {
+      "optional": true
+    },
+    "cookie-parser": {
+      "optional": true
+    },
+    "core-js": {
+      "optional": true
+    },
+    "css-loader": {
+      "optional": true
+    },
+    "css-minimizer-webpack-plugin": {
+      "optional": true
+    },
+    "dotenv": {
+      "optional": true
+    },
+    "dotenv-webpack": {
+      "optional": true
+    },
+    "eslint": {
+      "optional": true
+    },
+    "eslint-plugin-chai-friendly": {
+      "optional": true
+    },
+    "eslint-plugin-cypress": {
+      "optional": true
+    },
+    "eslint-plugin-import": {
+      "optional": true
+    },
+    "eslint-plugin-jest": {
+      "optional": true
+    },
+    "eslint-plugin-jsx-a11y": {
+      "optional": true
+    },
+    "eslint-plugin-react": {
+      "optional": true
+    },
+    "eslint-plugin-react-hooks": {
+      "optional": true
+    },
+    "eslint-plugin-testing-library": {
+      "optional": true
+    },
+    "fork-ts-checker-webpack-plugin": {
+      "optional": true
+    },
+    "html-webpack-plugin": {
+      "optional": true
+    },
+    "identity-obj-proxy": {
+      "optional": true
+    },
+    "jest": {
+      "optional": true
+    },
+    "mini-css-extract-plugin": {
+      "optional": true
+    },
+    "mini-svg-data-uri": {
+      "optional": true
+    },
+    "node-polyfill-webpack-plugin": {
+      "optional": true
+    },
+    "npm-check-updates": {
+      "optional": true
+    },
+    "postcss": {
+      "optional": true
+    },
+    "postcss-loader": {
+      "optional": true
+    },
+    "postcss-preset-env": {
+      "optional": true
+    },
+    "prettier": {
+      "optional": true
+    },
+    "rollup": {
+      "optional": true
+    },
+    "rollup-plugin-delete": {
+      "optional": true
+    },
+    "rollup-plugin-filesize": {
+      "optional": true
+    },
+    "sass": {
+      "optional": true
+    },
+    "sass-loader": {
+      "optional": true
+    },
+    "terser-webpack-plugin": {
+      "optional": true
+    },
+    "ttypescript": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    },
+    "typescript-transform-paths": {
+      "optional": true
+    },
+    "webpack": {
+      "optional": true
+    },
+    "webpack-bundle-analyzer": {
+      "optional": true
+    },
+    "webpack-cli": {
+      "optional": true
+    },
+    "webpack-dev-server": {
+      "optional": true
+    },
+    "webpack-merge": {
+      "optional": true
+    }
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.178",
+    "@babel/core": "^7.16.5",
+    "@babel/eslint-parser": "^7.16.5",
+    "cspell": "^5.13.4",
+    "eslint": "^8.5.0",
+    "eslint-plugin-import": "^2.25.3",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.4",
+    "npm-check-updates": "^12.0.5",
+    "prettier": "^2.5.1",
+    "remark-cli": "^10.0.1",
+    "remark-toc": "^8.0.1",
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "pkg-dir": "^6.0.1"
   }
 }
