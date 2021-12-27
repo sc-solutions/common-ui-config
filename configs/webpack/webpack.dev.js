@@ -29,7 +29,7 @@ module.exports = function (port, htmlRequired) {
   if (htmlRequired) {
     plugins.push(
       new HTMLWebpackPlugin({
-        template: `${process.cwd()}/public/index.html`,
+        template: path.join(process.cwd(), "/public/index.html"),
       })
     );
   }

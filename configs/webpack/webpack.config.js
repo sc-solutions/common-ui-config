@@ -14,7 +14,7 @@ const DEFAULT_OPTIONS = {
   exposes: undefined,
   remoteModules: undefined,
   appName: packageJson.name
-    .replace("@amzn/", "")
+    .replace("@sc-solutions/", "")
     .toLowerCase()
     .replace(/[^a-z]/g, ""),
 };
